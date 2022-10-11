@@ -28,9 +28,9 @@ public class SquarePrimesTest {
 
     @Test
     public void testSquarePrime3() {
-        IntList lst = IntList.of(6, 7, 8, 11, 10, 12);
+        IntList lst = IntList.of(2, 2, 3, 3, 8, 5, 100);
         boolean changed = IntListExercises.squarePrimes(lst);
-        assertEquals("6 -> 49 -> 8 -> 121 -> 10 -> 12", lst.toString());
+        assertEquals("4 -> 4 -> 9 -> 9 -> 8 -> 25 -> 100", lst.toString());
         assertTrue(changed);
     }
 }
