@@ -131,6 +131,6 @@ public class ArrayDeque<T> implements Iterable<T> {
             }
         }
 
-        return true;    
+        return true;
     }
 }
