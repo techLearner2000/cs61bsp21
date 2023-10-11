@@ -3,10 +3,10 @@ package deque;
 import java.util.Iterator;
 
 public class ArrayDeque<T> implements Iterable<T> {
-    private static final int DEFAULT_CAPACITY = 8;
-    private T[] items;
-    private int size;
-    private int front;
+    protected static final int DEFAULT_CAPACITY = 8;
+    protected T[] items;
+    protected int size;
+    protected int front;
 
     public ArrayDeque() {
         items = (T[]) new Object[DEFAULT_CAPACITY];

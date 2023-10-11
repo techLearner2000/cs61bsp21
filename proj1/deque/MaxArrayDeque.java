@@ -4,10 +4,6 @@ import java.util.Comparator;
 
 public class MaxArrayDeque<T> extends ArrayDeque<T>{
     private Comparator<T> comp;
-    private static final int DEFAULT_CAPACITY = 8;
-    private T[] items;
-    private int size;
-    private int front;
 
     public MaxArrayDeque(Comparator<T> c) {
         items = (T[]) new Object[DEFAULT_CAPACITY];
@@ -17,11 +13,12 @@ public class MaxArrayDeque<T> extends ArrayDeque<T>{
     }
 
     public T max() {
-        if (size == 0) return null;
-        T max = items[front];
-        for (T i : items) {
-            if (comp.compare(i, max) > 0) {
-                max = i;
+        if (this.isEmpty()) return null;
+        T max = get(0);
+        for (int curr = 0; curr < size; curr++) {
+            T item = get(curr);
+            if (comp.compare(item, max) > 0) {
+                max = item;
             }
         }
         return max;
@@ -29,10 +26,11 @@ public class MaxArrayDeque<T> extends ArrayDeque<T>{
 
     public T max(Comparator<T> c) {
         if (size == 0) return null;
-        T max = items[front];
-        for (T i : items) {
-            if (c.compare(i, max) > 0) {
-                max = i;
+        T max = items[0];
+        for (int curr = 0; curr < size; curr++) {
+            T item = get(curr);
+            if (c.compare(item, max) > 0) {
+                max = item;
             }
         }
         return max;
